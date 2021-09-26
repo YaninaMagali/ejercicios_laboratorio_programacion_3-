@@ -81,11 +81,17 @@ class Usuario
         switch($metodo)
         {
             case 'POST':
-                //if (isset($_POST['nombre'])){}
+                if (isset($_POST['nombre'])
+                && isset($_POST['clave'])
+                && isset($_POST['mail'])
+                )
+                {
+                    $usuario = Usuario::AgregarUsuario($_POST['nombre'], $_POST['clave'], $_POST['mail']);
+                    ArchivoJson::EscribirJson($usuario, "Ejercicio23_Usuarios.json");
+                    break;
+                }
                 
-                $usuario = Usuario::AgregarUsuario($_POST['nombre'], $_POST['clave'], $_POST['mail']);
-                ArchivoJson::EscribirJson($usuario, "Ejercicio23_Usuarios.json");
-                break;
+                
             case 'GET':
                 var_dump($_GET);
                 ArchivoJson::LeerJson("Ejercicio23_Usuarios.json");

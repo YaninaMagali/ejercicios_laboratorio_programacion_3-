@@ -15,18 +15,35 @@ function MostrarFormulario()
 
 function GetDataDelForm()
 {
-    ///VER SI HAGO VALIDACIONES ACA!
+    
     var nombre = document.getElementById("id_input_name").value;
     var clave = document.getElementById("id_input_clave").value;
     var mail = document.getElementById("id_input_mail").value;
-    var data = [nombre, clave, mail];
+    var data = null;
+
+    ///VER SI HAGO MAS VALIDACIONES ACA!
+
+    if(nombre != ""
+    && clave != ""
+    && mail != "")
+    {
+        data = [nombre, clave, mail];
+    }
+    else
+    {
+        alert("NO ingreso datos obligatorios");
+    }    
     return data;
 }
 
 function AgregarUsuario()
 {
     var data = GetDataDelForm();
-    AgregarUsuarioPost(data);
+
+    if(data != null)
+    {
+        AgregarUsuarioPost(data);
+    }
 
 }
 
@@ -61,10 +78,10 @@ function AgregarUsuarioPost(usuario)
         formData.append('clave', usuario[1]);
         formData.append('mail', usuario[2]);
 
-        console.log("usuarioJson: ");
+        //console.log("usuarioJson: ");
         //console.log(usuarioJson);
-        console.log("usuario formdata: ");
-        console.log(formData);
+        //console.log("usuario formdata: ");
+        //console.log(formData);
         //console.log(JSON.stringify(usuarioJson));
         //http.send(JSON.stringify(usuarioJson));//body
         http.send(formData);//body
