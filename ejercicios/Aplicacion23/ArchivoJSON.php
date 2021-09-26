@@ -7,12 +7,12 @@ class ArchivoJson
 {
     static function EscribirJson($data, $archivo)
     {
-        var_dump($data);
-
         try
         {
-            $file = fopen($archivo, "a");
-            fwrite($file, json_encode($data, JSON_UNESCAPED_UNICODE));
+            $aux = ArchivoJson::LeerJson($archivo);//Leo el json y guardo el contenido nw $aux
+            array_Push($aux, $data); // inserto al final de $aux el nuevo dato que voy a agregar al json
+            $file = fopen($archivo, "w"); // Abro el json
+            fwrite($file, json_encode($aux, JSON_UNESCAPED_UNICODE)); // Escribo $aux en json pisandolo
         }
         catch(Exception $e) 
         {
@@ -43,6 +43,9 @@ class ArchivoJson
                 $dato = $dato . fgets($file);
             }
             $json = json_decode($dato, true);
+            var_dump($dato);
+            echo '<br> //////////////// <br>';
+            var_dump($json);
             
         }
         catch(Exception $e) 
@@ -56,7 +59,10 @@ class ArchivoJson
                 fclose($file);
             }  
         }
+        return $json;
     }
+
+    
 }//class
 
 ?>
