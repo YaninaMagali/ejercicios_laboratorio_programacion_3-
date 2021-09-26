@@ -33,14 +33,23 @@ class ArchivoJson
 
     static function LeerJson($archivo)
     {
+        $dato = null;
+        $array = [];
+        $json = null;
+
         try
         {
-            $file = fopen($archivo, "a");
-            while(!feof($file))
-            {
-                $data = fgets($file);
-                
-            }
+            $file = fopen($archivo, "r");
+            $json = json_decode(file_get_contents($archivo), true);
+            // while(!feof($file))
+            // {
+            //     $dato = $dato . fgets($file);
+            //    // array_push($array,$dato);
+            //    //var_dump($dato);
+            // }
+            //$json = json_decode($dato, true);
+            var_dump($json);  
+            
         }
         catch(Exception $e) 
         {
@@ -48,9 +57,11 @@ class ArchivoJson
         }
         finally
         {
-            json_decode($data, JSON_UNESCAPED_UNICODE);
+            //var_dump($json);
+           //$retorno = json_decode($data, true);
             if($file)
             {
+                echo "cerrar archivo json <br>";
                 fclose($file);
             }  
         }

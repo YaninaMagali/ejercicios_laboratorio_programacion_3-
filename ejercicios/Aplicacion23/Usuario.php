@@ -1,31 +1,35 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
-define('ROOT', 'C:\xampp\htdocs\ejercicios\\');
+define('ROOT', 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ejercicios\\');
 require_once ROOT ."Aplicacion19/archivosCSV.php";
 require_once ROOT ."Aplicacion23/ArchivoJSON.php";
 define('ARCHIVO_CSV', 'ListaUsuarios.csv');
 echo "App 23 <br>";
 
+
+
 class Usuario
 {
-    public $id;
+    //public $id;
     public $nombre;
     public $clave;
     public $mail;
 
-    function __construct($id, $nombre, $clave, $mail)
+    function __construct($nombre, $clave, $mail)
     {
-        $this->id = $id;
+       // $this->id = $id;
         $this->nombre = $nombre;
         $this->clave = $clave;
         $this->mail = $mail;
     }
 
-    public static function AgregarUsuario($id, $nombre, $clave, $mail)
+    public static function AgregarUsuario($nombre, $clave, $mail)
     {
-        return new Usuario($id, $nombre, $clave, $mail);
+        return new Usuario($nombre, $clave, $mail);
     }
 
     public static function MostrarUsuario($usuarios)
@@ -77,11 +81,13 @@ class Usuario
         switch($metodo)
         {
             case 'POST':
+                //if (isset($_POST['nombre'])){}
+                
                 $usuario = Usuario::AgregarUsuario($_POST['nombre'], $_POST['clave'], $_POST['mail']);
                 ArchivoJson::EscribirJson($usuario, "Ejercicio23_Usuarios.json");
                 break;
             case 'GET':
-                //var_dump($_GET);
+                var_dump($_GET);
                 ArchivoJson::LeerJson("Ejercicio23_Usuarios.json");
                 break;
 

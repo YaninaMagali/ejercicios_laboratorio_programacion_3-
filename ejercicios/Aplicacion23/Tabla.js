@@ -38,9 +38,9 @@ function CrearTabla()
 }
 
 
-function AgregarFila()
+function AgregarFilaATabla(nombre, clave, mail)
 {
-   
+    
     let auxTable = document.getElementById("tabla_usuarios");
     
     if( auxTable == null)
@@ -52,9 +52,9 @@ function AgregarFila()
     let col1 = document.createElement("td");
     let col2 = document.createElement("td");
 
-    col0.appendChild(document.createTextNode("Pepe"));
-    col1.appendChild(document.createTextNode("pepe@pepe.com"));
-    col2.appendChild(document.createTextNode("12345678"));
+    col0.appendChild(document.createTextNode(nombre));
+    col1.appendChild(document.createTextNode(mail));
+    col2.appendChild(document.createTextNode(clave));
     fila.appendChild(col0);
     fila.appendChild(col1);
     fila.appendChild(col2);
@@ -63,9 +63,11 @@ function AgregarFila()
 }
 
 
+
+
 window.addEventListener("load", () =>{
 let btnregistrar = document.getElementById("id_registrar");
-    btnregistrar.addEventListener("click", AgregarFila);
+    btnregistrar.addEventListener("click", AgregarUsuario);
 } 
 
 )

@@ -50,6 +50,11 @@
 .Formulario
 {
     background-color: bisque;
+    display: flex;
+    justify-content:left;
+    align-items:flex-start;
+    flex-direction:column-reverse;
+    position: relative;
 }
 
 .Tabla
@@ -74,9 +79,13 @@
     border: 1px solid #ff0077;
 }
 
-.div_tabla_usuarios
+.div_registro_form
 {
-    align-items: stretch;
-    justify-content:space-between
-
+    display: flex;
+    position: relative;
+    justify-content:start;
+    align-items: flex-end;
+    flex-direction:row-reverse;
+    
 }
+
