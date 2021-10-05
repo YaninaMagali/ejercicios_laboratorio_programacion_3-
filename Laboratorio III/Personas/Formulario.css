@@ -1,0 +1,93 @@
+.Botones
+{
+    padding: 13px;
+    background-color: #FFB0A2;
+    color: #ffffff;
+    fill: #FFFFFF;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0px 6px 13px #666666;
+    border-style: hidden;
+    position:relative;
+    left:1%;
+}
+
+.BotonFlotante
+{
+    border-radius: 5px;
+    box-shadow: 0px 6px 13px #666666;
+    border-style: hidden;
+	letter-spacing: 2px; /* Espacio entre letras */
+	background-color: #bebbbbc2; /* Color de fondo */
+	padding: 10px 15px; /* Relleno del boton */
+	position: fixed;
+	top: 10%;
+	right: 1%;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+}
+
+.Inputs
+{
+    padding: 3px;
+    border-style: none;
+    border-radius: 5px;
+    font:initial;
+    position:absolute;
+    left:1%;
+}
+
+.Labels
+{
+    position:absolute;
+    left:1%;
+}
+
+.Formulario
+{
+    background-color: rgb(211, 239, 247);
+    /* display: flex;
+    justify-content:left;
+    align-items:flex-start;
+    flex-direction:column-reverse;
+    position: relative; */
+}
+
+.Tabla
+{
+    position: absolute;
+    border: 1px solid #ff0077;
+    background-color: rgb(248, 233, 214);
+    width: 50%;
+    text-align: center;
+}
+
+.Tabla td
+{
+    border: 1px solid #ff007A;
+    padding: 3px 2px;
+}
+
+.Tabla th
+{
+    background-color: #FFB0A2;
+    padding: 3px 2px;
+    border: 1px solid #ff0077;
+}
+
+.div_registro_form
+{
+    display: flex;
+    position: relative;
+    justify-content:start;
+    align-items: flex-end;
+    flex-direction:row-reverse;
+}
+
+.div_registro_form_child
+{
+    display: flex;
+    position: absolute;  
+}
