@@ -33,4 +33,10 @@ function GetMin($array, $datoAObtenerMax)
     return $min;
 }
 
+function getUserFromEmail($mail)
+{
+    $user = strstr($mail, '@', true); // Desde PHP 5.3.0
+    return $user; // mostrará name
+}
+
 ?>
