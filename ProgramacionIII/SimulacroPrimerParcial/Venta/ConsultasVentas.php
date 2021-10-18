@@ -16,7 +16,7 @@ function ConsultarCantidadPizzasVendidas()
 
 function ObtenerListaVentasPorFechaOrdenadaPorSabor($fecha1, $fecha2)
 {
-    echo "ObtenerListaVentasPorFechaOrdenadaPorSabor <br>";
+    //echo "ObtenerListaVentasPorFechaOrdenadaPorSabor <br>";
 
     $dao = new DAO();
     $consulta = $dao->PrepararConsulta("SELECT * FROM ventas WHERE `fecha` >= :fecha1 AND `fecha` <= :fecha2 ORDER BY `sabor` ;");
@@ -31,7 +31,7 @@ function ObtenerListaVentasPorFechaOrdenadaPorSabor($fecha1, $fecha2)
 
 function ListaVentasPorUsuario($usuarioMail)
 {
-    echo "ListaVentasPorUsuario <br>";
+    //echo "ListaVentasPorUsuario <br>";
 
     $dao = new DAO();
     $consulta = $dao->PrepararConsulta("SELECT * FROM ventas WHERE `mail` = :mail;");
@@ -44,14 +44,14 @@ function ListaVentasPorUsuario($usuarioMail)
 
 function ListaVentasPorSabor($sabor)
 {
-    echo "ListaVentasPorSabor <br>";
+    //echo "ListaVentasPorSabor <br>";
 
     $dao = new DAO();
     $consulta = $dao->PrepararConsulta("SELECT * FROM ventas WHERE `sabor` = :sabor;");
     $consulta->bindValue(':sabor',$sabor, PDO::PARAM_STR);
     $consulta->execute();
     $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($resultado);
+    //var_dump($resultado);
     return $resultado;    
 }
 

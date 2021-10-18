@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 function ConsultarVentaExacta($numero_pedido, $mail, $sabor, $tipo)
 {
-    echo "ConsultarVentaExacta <br>";
+    //echo "ConsultarVentaExacta <br>";
     $resultado = null;
 
     $dao = new DAO();
@@ -24,7 +24,8 @@ function ConsultarVentaExacta($numero_pedido, $mail, $sabor, $tipo)
 
 function ModificarVenta($numero_pedido, $mail, $sabor, $tipo, $cantidad)
 {
-    echo "ModificarVenta <br>";
+    //echo "ModificarVenta <br>";
+    $estadoModificacion = false;
 
     if(ConsultarVentaExacta($numero_pedido, $mail, $sabor, $tipo)!= false)
     {
@@ -38,6 +39,7 @@ function ModificarVenta($numero_pedido, $mail, $sabor, $tipo, $cantidad)
 
         try{
             $consulta->execute();   
+            $estadoModificacion = true;
             echo "ModificarVenta OK <br>";
         }
         catch(Exception $e)
@@ -46,7 +48,7 @@ function ModificarVenta($numero_pedido, $mail, $sabor, $tipo, $cantidad)
 
             var_dump($e);
         }
-
+        return $estadoModificacion;
     }
 }
 

@@ -67,14 +67,20 @@ function AltaVentaPost()
 function ModificarVentaPut()
 {
     require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial/Venta/ModificarVenta.php';
-    echo "entro a ModificarVentaPut ";
+    //echo "entro a ModificarVentaPut ";
 
     parse_str(file_get_contents("php://input"), $_PUT);
     
     if(ValidarDatosVentaPut($_PUT)
     && isset($_PUT['numero_pedido']))
     {
-        ModificarVenta($_PUT['numero_pedido'], $_PUT['mail'], $_PUT['sabor'], $_PUT['tipo'], $_PUT['cantidad']);
+        if(ModificarVenta($_PUT['numero_pedido'], $_PUT['mail'], $_PUT['sabor'], $_PUT['tipo'], $_PUT['cantidad']))
+        {
+            echo "Modificacion exitosa ";
+        }
+        else{
+            echo "No se pudo modificar. Verificar si existe el registro ";
+        }
     }
     
 }
