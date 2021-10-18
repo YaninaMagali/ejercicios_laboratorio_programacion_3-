@@ -85,4 +85,16 @@ function ModificarVentaPut()
     
 }
 
+function BorrarVentaDelete()
+{
+    require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial/Venta/BorrarVenta.php';
+    parse_str(file_get_contents("php://input"), $_DELETE);
+    var_dump($_DELETE);
+    echo $_DELETE['numero_pedido'];
+    if(isset($_DELETE['numero_pedido']))
+    {
+        BorrarVenta($_DELETE['numero_pedido']);
+    }
+}
+
 ?>

@@ -45,8 +45,7 @@ class Index
                 
                 break;
             case 'DELETE': 
-                var_dump($_DELETE);
-                BorrarVenta(1);
+                BorrarVentaDelete();
                 break;
         }
         }
