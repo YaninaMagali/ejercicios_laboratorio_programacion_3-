@@ -8,7 +8,7 @@ class Archivador
     function GuardarArchivo($archivo, $dir_subida, $newName)
     {
         // echo "/////////////////// archiov <br>";
-        // echo $archivo . "<br>";
+        echo $archivo . "<br>";
         //echo "//////////// dir subida <br>";
         //echo $dir_subida . "<br>";
         $pudoGuardar = false;
@@ -32,11 +32,26 @@ class Archivador
             $pudoGuardar = true;
             echo "Se subió con éxito.\n";
         } 
-        else 
+        else  
         {
             echo "Error!\n";
         }
         return $pudoGuardar;
+    }
+
+
+    function CambiarDeDirectorio($origen, $destino)
+    {
+        try
+        {
+            copy($origen,$destino);
+            unlink($origen);
+        }
+        catch(Exception $e)
+        {
+            echo "Error en CambiarDeDirectorio<br>";
+            var_dump($e);
+        }
     }
 
 }

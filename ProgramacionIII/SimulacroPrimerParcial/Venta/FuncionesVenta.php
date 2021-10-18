@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 function ValidarDatosVenta()
 {
@@ -16,6 +19,24 @@ function ValidarDatosVenta()
     return $estadoData;
 }
 
+function ValidarDatosVentaPut($_PUT)
+{
+    $estadoData =  false;
+
+    if(
+        isset   ($_PUT['mail']) 
+        && isset($_PUT['sabor']) 
+        && isset($_PUT['tipo']) 
+        && isset($_PUT['cantidad'])
+        && isset($_PUT['numero_pedido'])
+    )
+    {
+        $estadoData =  true;
+    }
+
+    return $estadoData;
+}
+
 function AltaVentaPost()
 {
     require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial/Venta/AltaVenta.php';
@@ -30,23 +51,32 @@ function AltaVentaPost()
     && PizzaConsultar::ValidarHayStock($_POST['sabor'], $_POST['tipo'], $listaPizzas, $_POST['cantidad'])
     )
     {
-        echo "ACa inserto en la DB <br>";
         $fecha = date("Y-m-d");
         $venta = AltaVenta::CrearVenta($fecha, $_POST['mail'], $_POST['sabor'], $_POST['tipo'], $_POST['cantidad']);
         $dao = new DAO();
         $dao->InsertarVenta($venta);
-        //ActualizarStock en Json
-        //PizzaCarga::ActualizarStockPizza($pizza, $listaPizzas)
+
         $a =  new Archivador();
-        //tipo+sabor+mail(solo
         $user = getUserFromEmail($_POST['mail']);
-        
         $fileName = $_POST['tipo'] . $_POST['sabor'] . $user . $fecha;
         $a->GuardarArchivo('foto','Venta/ImagenesDeLaVenta/', $fileName);
         
     }
+}
 
+function ModificarVentaPut()
+{
+    require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial/Venta/ModificarVenta.php';
+    echo "entro a ModificarVentaPut ";
 
+    parse_str(file_get_contents("php://input"), $_PUT);
+    
+    if(ValidarDatosVentaPut($_PUT)
+    && isset($_PUT['numero_pedido']))
+    {
+        ModificarVenta($_PUT['numero_pedido'], $_PUT['mail'], $_PUT['sabor'], $_PUT['tipo'], $_PUT['cantidad']);
+    }
+    
 }
 
 ?>
