@@ -8,9 +8,9 @@ function ConsultarCantidadPizzasVendidas()
     $dao = new DAO();
     $consulta = $dao->PrepararConsulta("SELECT SUM(cantidad) AS total FROM ventas;");
     $consulta->execute();
-    $fila = $consulta->fetch(PDO::FETCH_ASSOC);
-    
-    return $fila['total'];
+    //$fila = $consulta->fetch(PDO::FETCH_ASSOC);
+    //echo $fila['total'];
+    return $consulta->fetchColumn();
 
 }
 

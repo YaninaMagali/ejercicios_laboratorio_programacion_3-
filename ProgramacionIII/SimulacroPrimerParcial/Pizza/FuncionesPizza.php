@@ -68,7 +68,8 @@ function CargarPizzaEnJsonGet()
         if(! Pizza::ConsultarSiPizzaExiste($pizza, $listaPizzas))
         {
             echo "<br> Cargo Pizza nueva en Json <br>";
-            ArchivoJSON::EscribirJson($pizza, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial\Pizza/Pizza.json');
+            array_push($listaPizzas, $pizza);
+            ArchivoJSON::EscribirJson($listaPizzas, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial\Pizza/Pizza.json');
         }
         else
         {

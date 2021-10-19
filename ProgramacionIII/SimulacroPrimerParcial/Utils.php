@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 function GetMax($array, $datoAObtenerMax)
 {
+    var_dump($array);
     $max = 0;
     for($i=0; $i < count($array); $i++)
     {

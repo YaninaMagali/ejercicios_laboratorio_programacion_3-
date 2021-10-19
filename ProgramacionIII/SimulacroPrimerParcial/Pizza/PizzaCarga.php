@@ -76,11 +76,7 @@ class Pizza
         }
     }
 
-    public static function SumarStockPizza(&$pizza1, $pizza2)
-    {
-        $pizza1->precio = $pizza2->precio;
-        $pizza1->cantidad += $pizza2->cantidad;
-    }
+
 
     public static function GenerarId($listaPizzas)
     {
