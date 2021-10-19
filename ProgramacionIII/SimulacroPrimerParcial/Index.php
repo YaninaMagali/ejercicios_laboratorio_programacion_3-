@@ -37,9 +37,8 @@ class Index
                 CargarPizzaEnJsonGet();
                 break;
             case 'PUT': 
-                if ('PUT' === $metodo) {
-                    //parse_str(file_get_contents('php://input'), $_PUT);
-                    //var_dump($_PUT); //$_PUT contains put fields 
+                if ('PUT' === $metodo) 
+                {
                     ModificarVentaPut();
                 }
                 
@@ -57,4 +56,7 @@ Index::Index();
 //ListaVentasPorSabor('queso');
 //ConsultarVentaExacta(0, 'ariel@mail.com', 'queso', 'molde');
 //ModificarVenta(0, 'ariel@mail.com', 'queso', 'molde', 200);
+//$fileName = 'moldequesopapa';
+//$a = new Archivador;
+//$a->CambiarDeDirectorio('Venta/ImagenesDeLaVenta/'.$fileName, 'Venta/BACKUPVENTAS/'.$fileName);
 ?>  

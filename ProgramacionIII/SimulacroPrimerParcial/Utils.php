@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 
 function GetMax($array, $datoAObtenerMax)
 {
-    $max = null;
-
+    $max = 0;
     for($i=0; $i < count($array); $i++)
     {
         if($i == 0 ||
@@ -18,20 +17,20 @@ function GetMax($array, $datoAObtenerMax)
     return $max;
 }
 
-function GetMin($array, $datoAObtenerMax)
-{
-    $min = null;
+// function GetMin($array, $datoAObtenerMax)
+// {
+//     $min = null;
 
-    for($i=0; $i < count($array); $i++)
-    {
-        if($i == 0 ||
-        $array[$i]->$datoAObtenerMax < $min)
-        {
-            $min = $array[$i]->$datoAObtenerMax;
-        }
-    }
-    return $min;
-}
+//     for($i=0; $i < count($array); $i++)
+//     {
+//         if($i == 0 ||
+//         $array[$i]->$datoAObtenerMax < $min)
+//         {
+//             $min = $array[$i]->$datoAObtenerMax;
+//         }
+//     }
+//     return $min;
+// }
 
 function getUserFromEmail($mail)
 {

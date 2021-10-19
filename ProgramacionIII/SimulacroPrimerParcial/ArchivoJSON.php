@@ -9,10 +9,8 @@ class ArchivoJson
     {
         try
         {
-            $aux = ArchivoJson::LeerJson($archivo);
-            array_Push($aux, $data); 
             $file = fopen($archivo, "w"); 
-            fwrite($file, json_encode($aux, JSON_UNESCAPED_UNICODE)); 
+            fwrite($file, json_encode($data, JSON_UNESCAPED_UNICODE)); 
         }
         catch(Exception $e) 
         {
@@ -40,7 +38,7 @@ class ArchivoJson
             {
                 $dato = $dato . fgets($file);
             }
-            $json = json_decode($dato, false);
+            $json = json_decode($dato);//cambiar esto a false
          
         }
         catch(Exception $e) 

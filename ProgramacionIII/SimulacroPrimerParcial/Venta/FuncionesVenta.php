@@ -93,7 +93,14 @@ function BorrarVentaDelete()
     echo $_DELETE['numero_pedido'];
     if(isset($_DELETE['numero_pedido']))
     {
-        BorrarVenta($_DELETE['numero_pedido']);
+        if(BorrarVenta($_DELETE['numero_pedido']))
+        {
+            echo "se borro ok";
+        }
+        else
+        {
+            echo "NO se pudo borrar";
+        }
     }
 }
 

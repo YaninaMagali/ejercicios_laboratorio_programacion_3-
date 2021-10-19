@@ -42,16 +42,22 @@ class Archivador
 
     function CambiarDeDirectorio($origen, $destino)
     {
-        try
+        if(is_file($origen))
         {
-            copy($origen,$destino);
-            unlink($origen);
+            try
+            {
+                echo "origen: ".$origen;
+                echo "destino: ".$destino;
+                copy($origen, $destino);
+                unlink($origen);
+            }
+            catch(Exception $e)
+            {
+                echo "Error en CambiarDeDirectorio<br>";
+                var_dump($e);
+            }
         }
-        catch(Exception $e)
-        {
-            echo "Error en CambiarDeDirectorio<br>";
-            var_dump($e);
-        }
+
     }
 
 }

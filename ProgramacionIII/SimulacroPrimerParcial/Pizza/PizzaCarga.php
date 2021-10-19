@@ -48,7 +48,7 @@ class Pizza
         $index = -1; 
         for($i = 0; $i < count($listaPizzas); $i++)
         {
-            echo $i . "<br>";
+            //echo $i . "<br>";
             if($pizza->sabor == $listaPizzas[$i]->sabor
             && $pizza->tipo == $listaPizzas[$i]->tipo)
             {
@@ -62,17 +62,24 @@ class Pizza
 
     public static function ActualizarStockPizza($pizza, $listaPizzas)
     {
-        // echo "<br> listaPizzas <br>";
-        // var_dump($listaPizzas);
-        $i = -1;
-        $i = Pizza::GetIndice($pizza, $listaPizzas);
-        echo "<br>  indice <br>" . $i . " <br>";
-        echo "<br> pizza q correspode al indice <br>";
-        var_dump($listaPizzas[$i] );
-        $listaPizzas[$i] = $pizza;
-        echo "<br> cantidad: <br>";
-        echo $listaPizzas[$i]->cantidad;
-        //$listaPizzas[$i]->cantidad = $pizza->cantidad + $listaPizzas[$i]->cantidad;
+        //var_dump($pizza);
+        foreach($listaPizzas as $p)
+        {
+            if($pizza->sabor == $p->sabor
+            && $pizza->tipo == $p->tipo)
+            {
+                //var_dump($p);
+                $p->precio = $pizza->precio;
+                $p->cantidad += $pizza->cantidad;
+                break;
+            }
+        }
+    }
+
+    public static function SumarStockPizza(&$pizza1, $pizza2)
+    {
+        $pizza1->precio = $pizza2->precio;
+        $pizza1->cantidad += $pizza2->cantidad;
     }
 
     public static function GenerarId($listaPizzas)

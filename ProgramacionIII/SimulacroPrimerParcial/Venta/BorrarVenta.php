@@ -9,7 +9,7 @@ function BorrarVenta($numero_pedido)
         // Reconstruir el path con los datos de la base?
         $fileName = 'moldetomateyani2021-10-17';
         $a = new Archivador;
-        $a->CambiarDeDirectorio('Venta/ImagenesDeLaVenta/'.$fileName, 'Venta/BACKUPVENTAS');
+        $a->CambiarDeDirectorio('Venta/ImagenesDeLaVenta/'.$fileName, 'Venta/BACKUPVENTAS/'.$fileName);
     }
 }
 

@@ -60,11 +60,11 @@ function CargarPizzaEnJsonGet()
     if(ValidarDatosCrearPizzaGet())
     {
         $listaPizzas = ArchivoJson::LeerJson('C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial\Pizza/Pizza.json');
+        var_dump($listaPizzas);
         $id = Pizza::GenerarId($listaPizzas);
         //echo $id;
         $pizza = Pizza::CargarPizza($id,$_GET['sabor'], $_GET['tipo'], $_GET['precio'], $_GET['cantidad']);
-        
-        
+       
         if(! Pizza::ConsultarSiPizzaExiste($pizza, $listaPizzas))
         {
             echo "<br> Cargo Pizza nueva en Json <br>";
@@ -72,10 +72,13 @@ function CargarPizzaEnJsonGet()
         }
         else
         {
-            echo "<br> actualizar Stock <br>";
+            echo "<br> actualizar Stock///////////////////// <br>";
             Pizza::ActualizarStockPizza($pizza, $listaPizzas);
-            ArchivoJSON::EscribirJson($pizza, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial\Pizza/Pizza.json');
+            //ArchivoJSON::EscribirJson($pizza, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial\Pizza/Pizza.json');
+            ArchivoJSON::EscribirJson($listaPizzas, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\SimulacroPrimerParcial\Pizza/Pizza.json');
         }
+        
+
         
     }
 }
