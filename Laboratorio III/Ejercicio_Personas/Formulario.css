@@ -47,7 +47,7 @@
 
 .Formulario
 {
-    background-color: rgba(164, 235, 174, 0.822);
+    background-color: rgb(211, 239, 247);
     /* display: flex;
     justify-content:left;
     align-items:flex-start;
@@ -57,9 +57,9 @@
 
 .Tabla
 {
-    position: fixed;
-    border: 1px solid #65e754;
-    background-color: #9bfd8c;
+    position: absolute;
+    border: 1px solid #341261;
+    background-color: rgb(214, 233, 248);
     width: 50%;
     text-align: center;
 }
@@ -72,14 +72,9 @@
 
 .Tabla th
 {
-    background-color: #89d37b;
+    background-color: rgb(214, 233, 248);
     padding: 3px 2px;
-    border: 1px solid solid #0b2707;
-}
-
-.modal
-{
-    position: relative;
+    border: 1px solid solid #341261;
 }
 
 .div_registro_form
@@ -96,3 +91,55 @@
     display: flex;
     position: absolute;  
 }
+
+.modal { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+
+  .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 5px;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+  }
+
+  /*CUSTOM VARIABLES HERE*/
+ 
+.modal-dialog > * {
+    padding: 1rem;
+  }
+   
+  .modal-header,
+  .modal-footer {
+    background: var(--lightgray);
+  }
+   
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+   
+  .modal-header .modal-close {
+    font-size: 1.5rem;
+  }
+   
+  .modal p + p {
+    margin-top: 1rem;
+  }

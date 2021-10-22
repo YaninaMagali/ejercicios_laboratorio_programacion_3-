@@ -52,31 +52,6 @@
 // }
 
 
-function AgregarTablaPersonasGet()
-{
-    var http = new XMLHttpRequest();
-    http.onreadystatechange = function()
-    {
-        if(this.readyState == 4 && this.status == 200)
-        {
-            alert("OK");
-            var auxData = this.response;
-            AgregarFilasATablaPersonas(JSON.parse(auxData));
-        }
-    }
-    http.open("GET", "http://localhost:3000/personas", true);
-    http.setRequestHeader('Content-type', 'application/json');
-    http.send();
-}
 
 
-window.addEventListener("load", AgregarTablaPersonasGet);
-window.addEventListener("load", () =>{
-    let filaPersona = document.getElementsByName("id_fila");
-    for (var i = 0 ; i < filaPersona.length; i++) {
-        filaPersona[i].addEventListener('dblclick' , CrearModal , false ) ; 
-     }
-    //let children = filaPersona.childNodes;
-    //filaPersona.addEventListener("dblclick", CrearModal);
-}
-)
+

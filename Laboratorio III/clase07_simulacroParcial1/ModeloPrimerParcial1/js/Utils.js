@@ -1,4 +1,4 @@
-function GetFormData(elementId) 
+function GetData(elementId) 
 {
     return document.getElementById(elementId).value;
 }

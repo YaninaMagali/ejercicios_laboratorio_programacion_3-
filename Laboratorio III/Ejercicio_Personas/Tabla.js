@@ -46,6 +46,8 @@ function AgregarFila(cabeceraParams, params)
     if (params != null)
     {
         var fila = document.createElement("tr");
+        fila.setAttribute("id", ":asdasdsad");
+        fila.setAttribute("name", "asdasdsa");
 
         params.forEach(element =>
         {

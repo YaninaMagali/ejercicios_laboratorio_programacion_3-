@@ -37,7 +37,7 @@ function CrearCabecera(cabeceraData)
 function AgregarFila(cabeceraParams, params) 
 {
     var tabla = document.getElementById(idTabla);
-    console.log(params);
+    //console.log(params);
 
     if (tabla == null)
     {
