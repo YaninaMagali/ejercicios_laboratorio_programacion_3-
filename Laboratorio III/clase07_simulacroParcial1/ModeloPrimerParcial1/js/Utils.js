@@ -1,4 +1,4 @@
-function GetData(elementId) 
+function GetDataById(elementId) 
 {
     return document.getElementById(elementId).value;
 }

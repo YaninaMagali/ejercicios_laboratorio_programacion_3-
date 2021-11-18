@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Estilos.css">
+    <!-- <img src="img_chania.jpg" alt="Flowers in Chania"> -->
+    <script src="js/Modal.js"></script>
+    <script src="js/script.js"></script>
+    
+</head>
+<body>
+    <div id="id_div_tabla">
+        <button id="id_btn_abrir_form_registro" class="BotonFlotante">+</button><br>
+    </div>
+    
+    <div id="id_div_modal"></div>
+    <dialog id="id_modal" >
+        <form method="dialog" id="form" >              
+            <div style="display: flex; justify-content: end;">
+                <input type="button" value="X"  class="closeButton" id="id_cerrar_modal"/>
+            </div>
+            <br>
+            <div >
+                <input type="hidden" id="id_id"/> 
+                <div id="divNombre">
+                    <label >Nombre:</label>
+                    <input type="text" id="id_nombre" /> 
+                </div>
+                <br>
+                <div id="divApellido">
+                    <label >Apellido:</label>
+                    <input type="text" id="id_apellido" /> 
+                </div>
+                <div id="divImagen">
+                    <label >Foto:</label>
+                    <input type="file" id="id_file" /> 
+                </div>
+                <br>
+                <div id="divSexo">
+                    <label>Sexo:</label>
+                    <input type="radio" name="sexo" id="id_Male" value="Male">Male
+                    <input type="radio" name="sexo" id="id_Female" value="Female">Female
+                </div>
+                <br>
+                <div id="divLocalidad">
+                    <select name="localidad" id="id_localidad">
+                    </select>
+                </div>
+                <br>
+                <input type="button" value="Agregar" class="botonAdd" id="id_agregar_btn" style="display: none;"/> 
+                <input type="button" value="Modificar" class="botonMod" id="btn_modificarPersona" style="display: none;"/> 
+                <input type="button" value="Eliminar" class="botonDel" id="btn_deletePersona" style="display: none;"/> 
+                <div id="divModificar"> 
+                    
+                </div>
+            </div>
+        </form>
+    </dialog>    
+    <div id="divSpinner" class="spinner" hidden></div> 
+</body>
+</html>

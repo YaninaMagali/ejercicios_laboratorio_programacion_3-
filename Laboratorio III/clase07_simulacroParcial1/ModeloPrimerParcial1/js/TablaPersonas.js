@@ -2,25 +2,45 @@ const cabeceraParams = ["Id", "Nombre", "Apellido", "Fecha", "Sexo"];
 
 function CrearModal()
 {
-
-    alert("hola martin");
-    document.getElementById('id_div_modal').style.display = 'block';
-
+    modal = document.getElementById('id_div_modal');
+    modal.setAttribute("style", "display: block");
 }
+
+function OcultarModal() 
+{
+    modal = document.getElementById('id_div_modal');
+    modal.setAttribute("style", "display: none");  
+}
+
 function ObtenerDataPorFila(event)
 {
-    console.log("event");
-    console.log(event);
-    t = event.target;
-    idRow = t.getAttribute("id_fila");
-    row = document.getElementById(idRow);
-    console.log("row");
-    console.log(row);
-    let children = row.childNodes;
-    console.log("children");
-    console.log(children);
+    t = event.currentTarget;
+    let children = t.childNodes;
+    //console.log("children");
+    //console.log(children);
+    //console.log("children");
+    //console.log(children);
+    //var nombre = children[1];
+    //var apellido = children[2];
+    //var fecha = children[3];
+    //var sexo = children[4];
+    //console.log("datos");
+    //console.log(children[0]);
+    //datos = [nombre, apellido, fecha, sexo];
+    //console.log(datos);
+    return t.childNodes;
+}
 
-
+function PrecargarDataPersonaEnForm(dataPersona) 
+{
+    nombre = document.getElementById("id_input_nombre");
+    apellido = document.getElementById("id_input_apellido");
+    fecha = document.getElementById("id_input_fecha");
+    sexo = document.getElementsByClassName("radio");
+    nombre.value = dataPersona[1].textContent;
+    apellido.value = dataPersona[2].textContent;
+    fecha.value = dataPersona[3].textContent;
+    sexo.value = dataPersona[4].textContent;
 }
 
 function AgregarTablaPersonasGet()
@@ -30,17 +50,19 @@ function AgregarTablaPersonasGet()
     {
         if(this.readyState == 4 && this.status == 200)
         {
-            alert("OK");
+            // alert("OK");
             var auxData = this.response;
             AgregarFilasATablaPersonas(JSON.parse(auxData));
 
             var table = document.getElementById("id_tabla_personas");
             for (var i = 0, row; row = table.rows[i]; i++)
             {
-                //console.log(row);
-                row.addEventListener("dblclick", (e)=>{
+                var r = row;
+                r.addEventListener("dblclick", (e)=>{
                     CrearModal();
-                    ObtenerDataPorFila()});
+                    var data = ObtenerDataPorFila(e);
+                    PrecargarDataPersonaEnForm(data); 
+                });
             }
 
         }
@@ -60,11 +82,8 @@ function AgregarFilasATablaPersonas(params)
 }
 
 
-
-
-
-
 window.addEventListener("load", AgregarTablaPersonasGet);
+
 
 
 

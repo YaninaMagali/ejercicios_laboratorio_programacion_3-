@@ -9,6 +9,7 @@ function CrearTabla(idTabla, cabeceraData)
         tabla = document.createElement("table");
         tabla.setAttribute("id", idTabla);
         tabla.setAttribute("class", "Tabla");
+        // tabla.setAttribute("style", "position: fixed"); 
 
         // aca quizas deberia validar que existe e div, y sino o cree
         let container = document.getElementById("id_div_tabla_personas");
