@@ -10,9 +10,9 @@ class Tabla{
             tabla.setAttribute("class", "Tabla");
             let container = document.getElementById("id_div_tabla");
             container.appendChild(tabla);
-            let cabecera = CrearCabeceraTabla(cabeceraParams);
+            let cabecera = Tabla.CrearCabeceraTabla(cabeceraParams);
             tabla.appendChild(cabecera);
-            tbody = document.createElement("tbody");
+            let tbody = document.createElement("tbody");
             tbody.setAttribute("id", "id_tbody");
             tabla.appendChild(tbody);
         }
@@ -21,7 +21,7 @@ class Tabla{
     
     static CrearCabeceraTabla(cabeceraData) {
         let fila = document.createElement("tr");
-        for(i = 0; i<cabeceraData.length;i++)
+        for(let i = 0; i<cabeceraData.length;i++)
         {
             let col = document.createElement("th");
             let lbl = document.createTextNode(cabeceraData[i]);
@@ -39,7 +39,7 @@ class Tabla{
     
         if (tabla == null)
         {
-            tabla = CrearTabla(idTabla, cabeceraParams);
+            tabla = Tabla.CrearTabla(idTabla, cabeceraParams);
         }
     
         if (materia != null)
@@ -48,7 +48,7 @@ class Tabla{
             var fila = document.createElement("tr");
             fila.setAttribute("id", "id_fila" + materia.id);
             fila.setAttribute("name", "name_fila"+ materia.id);
-            cols = [materia.id, materia.nombre, materia.cuatrimestre, materia.fechaFinal, materia.turno];
+            var cols = [materia.id, materia.nombre, materia.cuatrimestre, materia.fechaFinal, materia.turno];
             cols.forEach(element =>
             {
                 var col = document.createElement("td");

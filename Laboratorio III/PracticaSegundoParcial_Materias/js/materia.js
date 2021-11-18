@@ -40,9 +40,10 @@ class Materia{
         this.nombre = value;
       }
 
-      CargarTablaMaterias(materias){
+      static CargarTablaMaterias(materias){
+        console.log("entro a CargarTablaMaterias");
         materias.forEach(element => {
-        AgregarFila(element);
+        Tabla.AgregarFila(element);
     })
 
 }
