@@ -11,11 +11,11 @@ class Cupon{
 
     static function ConsultarCupon($idCupon){
 
-    $dao = new DAO();
-    $consulta = $dao->PrepararConsulta("SELECT * FROM cupon WHERE `id` = :id;");
-    $consulta->bindValue(':id',$idCupon, PDO::PARAM_INT);
-    $consulta->execute();
-    return $consulta->fetchObject('Cupon') ;
+        $dao = new DAO();
+        $consulta = $dao->PrepararConsulta("SELECT * FROM cupon WHERE `id` = :id;");
+        $consulta->bindValue(':id',$idCupon, PDO::PARAM_INT);
+        $consulta->execute();
+        return $consulta->fetchObject('Cupon') ;
     }
 
     static function ActualizarCuponAUsado($idCupon){

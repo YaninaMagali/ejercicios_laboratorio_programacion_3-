@@ -31,6 +31,30 @@ class ConsultarCupones{
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'Cupon') ;
     }
+
+    function ConsultarCuponesJsonOrdenadosPorFecha(){
+
+        $cupones = ArchivoJson::LeerJson('C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Cupon/cupones.json');
+        usort($cupones, array('ConsultarCupones', 'CompararPorFecha'));
+        return $cupones;
+    }
+
+    function CompararPorFecha($c1, $c2){
+
+        if ($c1->fecha == $c2->fecha) {
+            return 0;
+        }
+        else{
+            if($c1->fecha >= $c2->fecha){
+                return 1;
+            }
+            else{
+                return -1;
+            }
+        }
+    }
+
+
 }
 
 

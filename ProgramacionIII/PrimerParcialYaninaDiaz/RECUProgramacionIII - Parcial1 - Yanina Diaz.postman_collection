@@ -1,0 +1,923 @@
+{
+	"info": {
+		"_postman_id": "bd8ebda3-ba11-4f27-a97b-b21688ac035e",
+		"name": "ProgramacionIII - Parcial1 - Yanina Diaz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AltaPizzaPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sabor",
+							"value": "cafe",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "piedra",
+							"type": "text"
+						},
+						{
+							"key": "cantidad",
+							"value": "232",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "250",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/Yanina Diaz/Downloads/WhatsApp Image 2021-09-26 at 21.37.19.jpeg"
+						},
+						{
+							"key": "opcion",
+							"value": "alta",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pizza Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sabor",
+							"value": "ksajd6",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "piedra",
+							"type": "text"
+						},
+						{
+							"key": "opcion",
+							"value": "consulta",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaVentaPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sabor",
+							"value": "tomate",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "piedra",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "yaninasabado@parcial.com",
+							"type": "text"
+						},
+						{
+							"key": "opcion",
+							"value": "altaVenta",
+							"type": "text"
+						},
+						{
+							"key": "tiene_descuento",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "cantidad",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/Yanina Diaz/Downloads/WhatsApp Image 2021-09-26 at 21.39.05.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alta Venta Post Cupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sabor",
+							"value": "tomate",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "piedra",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "nangiita@parcial.com",
+							"type": "text"
+						},
+						{
+							"key": "opcion",
+							"value": "altaVenta",
+							"type": "text"
+						},
+						{
+							"key": "id_cupon",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "cantidad",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/Yanina Diaz/Downloads/WhatsApp Image 2021-09-26 at 21.39.05.jpeg"
+						},
+						{
+							"key": "tiene_descuento",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "numero_pedido",
+							"value": "42",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devolver Pizza",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "opcion",
+							"value": "devolucion",
+							"type": "text"
+						},
+						{
+							"key": "numero_pedido",
+							"value": "89",
+							"type": "text"
+						},
+						{
+							"key": "causa",
+							"value": "apesta 89",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/Yanina Diaz/Downloads/WhatsApp Image 2021-09-26 at 21.39.05.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Devoluciones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=devoluciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "devoluciones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Devoluciones Por Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=devolucionesPorUsuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "devolucionesPorUsuario"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Devoluciones Por Fecha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=devolucionesPorFecha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "devolucionesPorFecha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cupones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=cupones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "cupones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cupones Ordenados Por Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=cuponesPorUsuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "cuponesPorUsuario"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cupones Ordenados Por Fecha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=cuponesPorFecha&fecha=2021-11-26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "cuponesPorFecha"
+						},
+						{
+							"key": "fecha",
+							"value": "2021-11-26"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cupones Ordenados JSON Por Fecha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=imagenes&tipo=actuales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "imagenes"
+						},
+						{
+							"key": "tipo",
+							"value": "actuales"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mod devolucion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "numero_pedido",
+							"value": "33",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "nangiita@parcial.com",
+							"type": "text"
+						},
+						{
+							"key": "causa",
+							"value": "NUeva causa de devolucion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar venta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "numero_pedido",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "nangiita@parcial.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "causa",
+							"value": "NUeva causa de devolucion",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "imagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=cuponesPorFecha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "cuponesPorFecha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarDevolucionesYCupones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/ejercicios_laboratorio_programacion_3-/ProgramacionIII/PrimerParcialYaninaDiaz/index.php?opcion=ListarDevolucionesYCupones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ejercicios_laboratorio_programacion_3-",
+						"ProgramacionIII",
+						"PrimerParcialYaninaDiaz",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "opcion",
+							"value": "ListarDevolucionesYCupones"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

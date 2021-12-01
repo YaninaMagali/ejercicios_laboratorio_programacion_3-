@@ -18,21 +18,6 @@ function GetMax($array, $datoAObtenerMax)
     return $max;
 }
 
-// function GetMin($array, $datoAObtenerMax)
-// {
-//     $min = null;
-
-//     for($i=0; $i < count($array); $i++)
-//     {
-//         if($i == 0 ||
-//         $array[$i]->$datoAObtenerMax < $min)
-//         {
-//             $min = $array[$i]->$datoAObtenerMax;
-//         }
-//     }
-//     return $min;
-// }
-
 function getUserFromEmail($mail)
 {
     $user = strstr($mail, '@', true); // Desde PHP 5.3.0

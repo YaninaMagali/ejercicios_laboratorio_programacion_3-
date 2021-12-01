@@ -22,6 +22,7 @@ class Devolucion{
         && Venta::ConsultarVentasPorNumeroPedido($_POST['numero_pedido'])){
             $estadoDatos = true;
         }
+        var_dump($estadoDatos);
         return $estadoDatos;
     }
     
@@ -30,17 +31,21 @@ class Devolucion{
         if(Devolucion::ValidarDatosDevolucion()){
 
             $cupones = ArchivoJson::LeerJson('C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Cupon/cupones.json');
-            $id = Pizza::GenerarId($cupones);
-            $c = Cupon::CrearCupon(10, $id);
+            $idCupon = Pizza::GenerarId($cupones);
+            var_dump($idCupon);
+            $c = Cupon::CrearCupon(10, $idCupon);
+            //$idCupon = $c->InsertarCupon();
             array_push($cupones, $c);
             ArchivoJSON::EscribirJson($cupones, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Cupon/cupones.json');
-            //$idCupon = $c->InsertarCupon();
+            
 
             $devoluciones = ArchivoJson::LeerJson('C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Devolucion/devoluciones.json');
-            $devolucion = Devolucion::CrearDevolucion($_POST['numero_pedido'], $c->id, $_POST['causa']);
+            $idDevolucion = Pizza::GenerarId($devoluciones);
+            //CrearDevolucion($numero_pedido, $id_cupon, $causa)
+            $devolucion = Devolucion::CrearDevolucion($idDevolucion, $_POST['numero_pedido'], $idCupon, $_POST['causa']);
             array_push($devoluciones, $devolucion);
             ArchivoJSON::EscribirJson($devoluciones, 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Devolucion/devoluciones.json');
-           //$devolucion->InsertarDevolucion();
+            $devolucion->InsertarDevolucion();
             
             $a =  new Archivador();
             $a->GuardarArchivo('foto','Venta/ImagenesDevolucion/', "Pedido" . $_POST['numero_pedido']);
@@ -53,10 +58,11 @@ class Devolucion{
         }
 }
 
-    static function CrearDevolucion($numero_pedido, $id_cupon, $causa){
+    static function CrearDevolucion($idDevolucion,$numero_pedido, $id_cupon, $causa){
         
         $d = new Devolucion();
         $d->fecha = date("Y-m-d");
+        $d->id = $idDevolucion;
         $d->numero_pedido = $numero_pedido;
         $d->id_cupon = $id_cupon;
         $d->causa = $causa;

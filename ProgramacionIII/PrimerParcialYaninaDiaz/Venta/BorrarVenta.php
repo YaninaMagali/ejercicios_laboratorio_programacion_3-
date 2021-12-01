@@ -36,7 +36,7 @@ class BorrarVenta{
 public static function DeleteVenta($numero_pedido){
 
     $dao = new DAO();
-    $consulta = $dao->PrepararConsulta("DELETE FROM ventas WHERE numero_pedido = :numero_pedido;");
+    $consulta = $dao->PrepararConsulta("UPDATE ventas SET estado = 1 WHERE numero_pedido = :numero_pedido;");
     $consulta->bindValue(':numero_pedido', $numero_pedido, PDO::PARAM_INT);
     
     return $consulta->execute();

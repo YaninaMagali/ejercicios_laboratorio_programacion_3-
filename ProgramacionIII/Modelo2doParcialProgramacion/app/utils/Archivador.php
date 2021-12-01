@@ -12,6 +12,11 @@ class Archivador
 
         $fichero_subido = $dir_subida . basename($_FILES[$archivo][$newName]);
 
+        if (!file_exists($dir_subida)) 
+        {
+            mkdir($dir_subida, 0777, true);
+            
+        }
 
         if(is_file($fichero_subido))
         {
@@ -32,25 +37,7 @@ class Archivador
     }
 
 
-    public static function CambiarDeDirectorio($origen, $destino)
-    {
-        if(is_file($origen))
-        {
-            try
-            {
-                echo "origen: ".$origen;
-                echo "destino: ".$destino;
-                copy($origen, $destino);
-                unlink($origen);
-            }
-            catch(Exception $e)
-            {
-                echo "Error en CambiarDeDirectorio<br>";
-                var_dump($e);
-            }
-        }
-
-    }
 
 }
 ?>
+

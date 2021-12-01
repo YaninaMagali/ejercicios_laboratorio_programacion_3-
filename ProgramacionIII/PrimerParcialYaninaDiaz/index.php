@@ -10,6 +10,7 @@ require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\Programacio
 require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Cupon/ConsultarCupones.php';
 require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Devolucion/ModificarDevolucion.php';
 require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\Venta/BorrarVenta.php';
+require_once 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ProgramacionIII\PrimerParcialYaninaDiaz\ConsultasEspeciales.php';
 
 
 
@@ -58,9 +59,21 @@ class Index
                         var_dump(ConsultarCupones::ConsultarCuponesOrdenadosPorUsuario());
                         break;
                     case 'cuponesPorFecha':
-                        var_dump(ConsultarCupones::ConsultarCuponesOrdenadosPorFecha( $_GET["fecha"]));
+                        //var_dump(ConsultarCupones::ConsultarCuponesOrdenadosPorFecha( $_GET["fecha"]));
+                        $consulta = new ConsultarCupones();
+                        var_dump($consulta->ConsultarCuponesJsonOrdenadosPorFecha());
+                        break;
+                    case 'imagenes':
+                        var_dump(ConsultasEspeciales::ListarImagenes($_GET["tipo"]));
+                        break;
+                    case 'ventasEliminadas':
+                        var_dump(ConsultasEspeciales::ConsultarVentasEliminadas());
+                        break;
+                    case 'ListarDevolucionesYCupones':
+                        var_dump(ConsultasEspeciales::ListarDevolucionesYCupones());
                         break;
                 }
+                break;
             case 'PUT': 
                 ModificarDevolucion::ModificarDevolucion();
                 break;
@@ -74,3 +87,4 @@ Index::Index();
 //echo(ConsultarCantidadPizzasVendidasPorDia('2021-10-17'));
 //echo(ConsultarCantidadPizzasVendidasPorDia());
 //var_dump(ObtenerListaVentasPorFechaOrdenadaPorSabor('2021-10-17', '2021-10-20'));
+
