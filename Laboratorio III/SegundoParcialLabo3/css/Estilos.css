@@ -1,0 +1,86 @@
+.botonMod
+{
+    padding: 13px;
+    background-color: #5db941;
+    fill:  #5db941;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 2px;
+    box-shadow: 0px 6px 13px #666666;
+    border-style: hidden;
+    left:1%;
+}
+.botonDel
+{
+    padding: 13px;
+    background-color: #f84563;
+    fill:  #f84563;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 2px;
+    box-shadow: 0px 6px 13px #666666;
+    border-style: hidden;
+    left:1%;
+}
+
+.botonClean
+{
+    padding: 13px;
+    background-color: #77a1ee;
+    fill:  #77a1ee;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 2px;
+    box-shadow: 0px 6px 13px #666666;
+    border-style: hidden;
+    left:1%;
+}
+
+.Tabla
+{
+    position: absolute;
+    border: 1px solid #52354d;
+    background-color: #f0c5e9;
+    width: 50%;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.Tabla td
+{
+    padding: 3px 2px;
+}
+
+.Tabla th
+{
+
+    background-color: #96678f;
+    padding: 3px 2px;
+
+}
+
+
+  .Inputs
+{
+    padding: 3px;
+    border-style: none;
+    border-radius: 2px;
+    font:initial;
+    left:1%;
+}
+
+
+
+.body
+{
+    background-color: rgb(255, 239, 250);
+}
+
+.divBtn{
+  display: flex;
+  justify-content: space-between;
+}
+.divProm{
+  display: flex;
+  justify-content: space-between;
+}

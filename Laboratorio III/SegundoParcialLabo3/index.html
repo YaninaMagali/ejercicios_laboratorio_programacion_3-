@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js"></script>
+    <script src="js/persona.js"></script>
+    <script src="js/clientes.js"></script>
+    <script src="js/tabla.js"></script>
+    <link rel="stylesheet" href="css/Estilos.css">
+</head>
+<body class="body">
+    <div id = "id_form_personas" class="Formulario">
+        <label>Id</label> <br>
+        <input type="text" id="id_input_id" class="Inputs" disabled> <br>
+        <br>
+        <label>Nombre</label> <br>
+        <input type="text" id="id_nombre" class="Inputs"> <br>
+        <br>
+        <label>Apellido</label> <br>
+        <input type="text" id="id_apellido" class="Inputs"> <br>
+        <br>
+        <div id="divSexo">
+            <label>Sexo</label> <br>  
+            <select name="sexo" id="id_sexo">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <br>
+        <label>Edad</label> <br>
+        <input type="text" id="id_edad" class="Inputs"> <br>
+        <br>
+        <br>
+        <div id="divBtn" class="divBtn" style="text-align: right; width:320px" >
+            <input type="button" value="Agregar" class="botonMod" id="btn_add" style="display: block;"/> 
+            <input type="button" value="Eliminar" class="botonDel" id="btn_delete" style="display: block;"/>                 
+            <input type="button" value="Limpiar" class="botonClean" id="btn_clean" style="display: block;"/>      
+        </div>
+        <br>
+
+    <div id="id_div_filtros">
+        <br>
+        <label >Sexo</label> <br>
+        <select name="Sexo" id="id_select_sexo">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br> <br>
+    </div>
+    <br><br>
+
+    <label>Promedio</label> <br>
+    <div id="divProm" class="divBtn" style="text-align: right; width:420px" >
+        
+        <input type="text" id="id_input_promedio" class="Inputs"> <br>
+        <br>
+        <input type="button" value="Calcular Promedio" class="botonClean" id="btn_promedio" style="display: block;"/>                            
+    </div>
+
+    <br>
+    <label>
+        <input type="checkbox" checked="true" id="cb_id" value="cb_id" onchange="OcultarColumna(event)">ID
+    </label>
+    <label>
+        <input type="checkbox" id="cb_nombre"  checked="true" value="cb_nombre"onchange="OcultarColumna(event)"  >Nombre
+    </label>
+    <label>
+        <input type="checkbox" id="cb_apellido"   checked="true"value="cb_apellido" onchange="OcultarColumna(event)">Apellido
+    </label>
+    <label>
+        <input type="checkbox" id="cb_edad"  checked="true" value="cb_edad" onchange="OcultarColumna(event)">Edad
+    </label> 
+    <label>
+        <input type="checkbox" id="cb_sexo"  checked="true" value="cb_sexo" onchange="OcultarColumna(event)">Sexo
+    </label> 
+    <br><br>
+    <div id="id_div_tabla"></div>
+    <div id="id_div_modal"></div>
+      
+    <div id="divSpinner" class="spinner" hidden></div> 
+</body>
+</html>
