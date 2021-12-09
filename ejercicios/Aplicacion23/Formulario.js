@@ -67,12 +67,15 @@ function AgregarUsuarioPost(usuario)
             }
         }
         http.open("POST", "http://localhost/ejercicios_laboratorio_programacion_3-/ejercicios/Aplicacion23/usuario.php", true);
+        
+        //var usuarioJson = {'nombre': usuario[0], 'clave': usuario[1], 'mail': usuario[2]}
         //http.setRequestHeader('Access-Control-Allow-Origin', '*');
         //http.setRequestHeader('Content-type', 'application/json');
         //http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        //console.log(JSON.stringify(usuarioJson));
+        //http.send(JSON.stringify(usuarioJson));//body
+        //http.send(usuarioJson);
 
-        
-        //var usuarioJson = {'nombre': usuario[0], 'clave': usuario[1], 'mail': usuario[2]}
         var formData = new FormData(); // Currently empty
         formData.append('nombre', usuario[0]);
         formData.append('clave', usuario[1]);
@@ -82,10 +85,9 @@ function AgregarUsuarioPost(usuario)
         //console.log(usuarioJson);
         //console.log("usuario formdata: ");
         //console.log(formData);
-        //console.log(JSON.stringify(usuarioJson));
-        //http.send(JSON.stringify(usuarioJson));//body
+
         http.send(formData);//body
-        //http.send(usuarioJson);
+        
     }
 }
 

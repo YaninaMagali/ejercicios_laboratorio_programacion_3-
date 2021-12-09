@@ -57,7 +57,7 @@ class Modal{
 
     static MostrarModal(materia) {
         //console.log("MostrarModal");
-        modal = document.getElementById("id_modal");
+        var modal = document.getElementById("id_modal");
         var modificarBtn = document.getElementById("btn_modificar");
         var delBtn = document.getElementById("btn_delete");
     
@@ -78,7 +78,7 @@ class Modal{
             delBtn.setAttribute("style", "display: block");
     
             modificarBtn.addEventListener("click", (e)=>{
-                PostModificarPromise();
+                PostModificarMateria();
             });
     
             delBtn.addEventListener("click", (e)=>{

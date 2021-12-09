@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 define('ROOT', 'C:\xampp\htdocs\ejercicios_laboratorio_programacion_3-\ejercicios\\');
 require_once ROOT ."Aplicacion19/archivosCSV.php";
 require_once ROOT ."Aplicacion23/ArchivoJSON.php";
+require_once ROOT ."Aplicacion23/Archivador.php";
 define('ARCHIVO_CSV', 'ListaUsuarios.csv');
 echo "App 23 <br>";
 
@@ -15,6 +16,7 @@ echo "App 23 <br>";
 class Usuario
 {
     //public $id;
+    //public $fecha;
     public $nombre;
     public $clave;
     public $mail;
@@ -22,6 +24,7 @@ class Usuario
     function __construct($nombre, $clave, $mail)
     {
        // $this->id = $id;
+       // $this->fecha = $fecha;
         $this->nombre = $nombre;
         $this->clave = $clave;
         $this->mail = $mail;
@@ -81,15 +84,22 @@ class Usuario
         switch($metodo)
         {
             case 'POST':
-                if (isset($_POST['nombre'])
+                //hacer validaciones aparte
+                if (isset($_POST['nombre']) 
                 && isset($_POST['clave'])
                 && isset($_POST['mail'])
                 )
                 {
+                    echo "/////////////////////// <br>";
+                    var_dump($_POST);
+                    echo "/////////////////////// <br>";
                     $usuario = Usuario::AgregarUsuario($_POST['nombre'], $_POST['clave'], $_POST['mail']);
+                    $a =  new Archivador();
+                    //var_dump(isset($_FILES['archivo']));
+                    $a->GuardarArchivo('archivo','usuario/fotos/');
                     ArchivoJson::EscribirJson($usuario, "Ejercicio23_Usuarios.json");
-                    break;
                 }
+                break;
                 
                 
             case 'GET':

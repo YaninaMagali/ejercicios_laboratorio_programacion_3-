@@ -329,6 +329,7 @@ function PostAgregarNuevoUsuarioPromise() {
     promise.then(ActualizarTabla).catch(funcionError);
 }
 
+
 window.addEventListener("load", function () {
     this.getPersonasPromise();
     this.getLocalidadesPromise();

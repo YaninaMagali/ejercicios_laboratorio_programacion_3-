@@ -47,6 +47,7 @@ class Usuario
         switch($metodo)
         {
             case 'POST':
+                //if (isset($_POST['nombre'])){}
                 $usuario = Usuario::AgregarUsuario($_POST['nombre'], $_POST['clave'], $_POST['mail']);
                 ArchivoCSV::Escribir($usuario, "Ejercicio20_Usuarios.csv");
                 break;

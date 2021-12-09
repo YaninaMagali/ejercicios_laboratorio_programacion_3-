@@ -1,13 +1,14 @@
 class Materia{
-    // id;
-    // nombre;
-    // cuatrimestre;
-    // fechaFinal;
-    // turno;
+      id;
+      nombre;
+      cuatrimestre;
+      fechaFinal;
+      turno;
+
     constructor(id, nombre, cuatri, fecha, turno) {
         this.id = id;
         this.setNombre = nombre;
-        this.cuatri = cuatri;
+        this.cuatrimestre = cuatri;
         this.setFecha = fecha;
         this.setTurno = turno;
       }
@@ -17,7 +18,7 @@ class Materia{
       }
     
       set setTurno(value) {
-        if (value != 'tarde' && value != 'noche' && value != 'maniana') {
+        if (value != 'Tarde' && value != 'Noche' && value != 'Mañana') {
           alert("turno invalid.");
           return;
         }
@@ -29,7 +30,14 @@ class Materia{
           alert("fecha invalida.");
           return;
         }
-        this.turno = value;
+        else{
+          this.fechaFinal = value;
+          //console.log(Date(value));
+        }
+        // var fechaAux =  value.split("-");  
+        // value = fechaAux[2] + "/" + fechaAux[1] + "/" + fechaAux[0];
+
+        
       }
 
       set setNombre(value){
@@ -42,9 +50,28 @@ class Materia{
 
       static CargarTablaMaterias(materias){
         console.log("entro a CargarTablaMaterias");
-        materias.forEach(element => {
-        Tabla.AgregarFila(element);
-    })
+        materias.forEach(e => {
+        materiasP.push(e);
+        Tabla.AgregarFila(e);
+        })
+      }
 
-}
+      static FiltrarMateriaPorTurno() {
+      
+        var materiasFiltradas = [];
+        var turnoSeleccionado = document.getElementById("id_select_turno").value;
+        materiasFiltradas = materiasP.filter(materia => materia.turno == turnoSeleccionado);
+        Tabla.ActualizarTabla();
+        Materia.CargarTablaMaterias(materiasFiltradas);   
+      }
+
+      static SumarDosAnios(materia){
+
+        // console.log(materia);
+        // var f = new Date(materia.fecha).setYear(2022);
+        // console.log(f);
+        var aux = parseInt(materia.id)+50 ;
+        return  new Materia(aux , materia.nombre, materia.cuatrimestre, materia.fechaFinal, materia.turno);
+      }
+      //Despues llamo a la func map: materiasP.map(Materia.SumarDosAnios);
 }

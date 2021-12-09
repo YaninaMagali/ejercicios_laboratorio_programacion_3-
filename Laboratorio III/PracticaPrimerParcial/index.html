@@ -25,34 +25,41 @@
             <br>
             <div >
                 <input type="hidden" id="id_id"/> 
-                <div id="divNombre">
-                    <label >Nombre:</label>
-                    <input type="text" id="id_nombre" /> 
+
+
+                <div id="divId">
+                    <label >Id:</label>
+                    <input type="text" id="id_id" disabled /> 
                 </div>
                 <br>
-                <div id="divApellido">
-                    <label >Apellido:</label>
-                    <input type="text" id="id_apellido" /> 
-                </div>
-                <div id="divImagen">
-                    <label >Foto:</label>
-                    <input type="file" id="id_file" /> 
+                <div id="divMarca">
+                    <label >Marca:</label>
+                    <input type="text" id="id_marca" /> 
                 </div>
                 <br>
-                <div id="divSexo">
-                    <label>Sexo:</label>
-                    <input type="radio" name="sexo" id="id_Male" value="Male">Male
-                    <input type="radio" name="sexo" id="id_Female" value="Female">Female
+                <div id="divModelo">
+                    <label >Modelo:</label>
+                    <input type="text" id="id_modelo" /> 
                 </div>
                 <br>
-                <div id="divLocalidad">
-                    <select name="localidad" id="id_localidad">
+
+                <div id="divPrecio">
+                    <label >Precio:</label>
+                    <input type="text" id="id_precio" /> 
+                </div>
+                <br>
+                <br>
+                <div id="divTipo">
+                    <select name="tipo" id="id_tipo">
+                        <option value="Auto">Auto</option>
+                        <option value="Camioneta">Camioneta</option>
                     </select>
                 </div>
                 <br>
                 <input type="button" value="Agregar" class="botonAdd" id="id_agregar_btn" style="display: none;"/> 
-                <input type="button" value="Modificar" class="botonMod" id="btn_modificarPersona" style="display: none;"/> 
-                <input type="button" value="Eliminar" class="botonDel" id="btn_deletePersona" style="display: none;"/> 
+                <input type="button" value="Cancelar" class="botonCancelar" id="btn_cancelar" style="display: none;"/> 
+                
+                
                 <div id="divModificar"> 
                     
                 </div>

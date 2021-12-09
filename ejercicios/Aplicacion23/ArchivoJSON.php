@@ -9,11 +9,9 @@ class ArchivoJson
     {
         try
         {
-            $aux = ArchivoJson::LeerJson($archivo);//Leo el json y guardo el contenido nw $aux
-            array_Push($aux, $data); // inserto al final de $aux el nuevo dato que voy a agregar al json
-            $file = fopen($archivo, "w"); // Abro el json
-            fwrite($file, json_encode($aux, JSON_UNESCAPED_UNICODE)); // Escribo $aux en json pisandolo
-        }
+            $aux = ArchivoJson::LeerJson($archivo);
+            array_Push($aux, $data); 
+            fwrite($file, json_encode($aux, JSON_UNESCAPED_UNICODE));
         catch(Exception $e) 
         {
             echo 'Message: No se pudo abrir file';
@@ -41,11 +39,12 @@ class ArchivoJson
             while(!feof($file))
             {
                 $dato = $dato . fgets($file);
+                //$arradatoy = file_get_content($archivo);
             }
             $json = json_decode($dato, true);
-            var_dump($dato);
-            echo '<br> //////////////// <br>';
-            var_dump($json);
+            // var_dump($dato);
+            // echo '<br> //////////////// <br>';
+            // var_dump($json);
             
         }
         catch(Exception $e) 

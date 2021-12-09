@@ -36,14 +36,12 @@
     border-radius: 5px;
     font:initial;
     position:absolute;
-    /*top:50px;*/
     left:1%;
 }
 
 .Labels
 {
     position:absolute;
-    /*top:50px;*/
     left:1%;
 }
 
@@ -86,6 +84,11 @@
     justify-content:start;
     align-items: flex-end;
     flex-direction:row-reverse;
-    
+}
+
+.div_registro_form_child
+{
+    display: flex;
+    position: absolute;  
 }
 

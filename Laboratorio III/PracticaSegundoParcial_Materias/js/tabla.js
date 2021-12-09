@@ -58,12 +58,26 @@ class Tabla{
             })
     
             fila.addEventListener("dblclick", (e)=>{
-                MostrarModal(materia)});
+                Modal.MostrarModal(materia)});
     
                 tbody.appendChild(fila);
         }
         return fila;
     }
 
+    static ActualizarTabla() {
+        var tabla = document.getElementById("id_tbody");
+        var children = tabla.children; 
+    
+        while (tabla.firstChild) {
+            tabla.removeChild(tabla.firstChild);
+          }
+    }
 
+    static ReemplazarFila(materia) {
+
+        var filaAux = Tabla.AgregarFila(materia);
+        var filaActual = document.getElementById("id_fila"+materia.id);
+        filaActual.replaceWith(filaAux);
+    }
 }   

@@ -15,37 +15,40 @@ class Usuario
     public $localidad;
     public $mail;
 
-    // public function __construct($id, $nombre, $apellido, $clave, $fecha_registro, $localidad, $mail)
-    // {
-    //     $this->id = $id;    
-    //     $this->nombre = $nombre ;
-    //     $this->apellido = $apellido;
-    //     $this->clave = $clave;
-    //     $this->fecha_registro = $fecha_registro;
-    //     $this->localidad = $localidad;
-    //     $this->mail = $mail;
-    // }
-
-    public static function Operar()
-    {
-        $metodo = $_SERVER["REQUEST_METHOD"];
-
-        switch($metodo)
-        {
-            case 'GET':
-                //preguntar por la opcion
-                $queryParams = $_POST['opcion'];
-                //hacer consulta
-                $dao = new UsuarioDAO();
-                echo "dao en case GET<br>";
-                var_dump($dao);
-                $dao->ConsultarUsuarios();
-                break;
-        }
+    public static function ObtenerUsuarios()
+    {  
+        $dao = new UsuarioDAO();
+        return $dao->ConsultarUsuarios();    
     }
 
+    public static function MostrarUsuariosHtml($usuarios)
+    {
+        foreach ($usuarios as $usuario)
+        {
+            echo '<li style="color:red">'. $usuario->id .
+             $usuario->nombre . " " .
+             $usuario->apellido . " " .
+             $usuario->clave . " " .
+             $usuario->fecha_registro . " " .
+             $usuario->localidad . " " .
+             $usuario->mail . " " .
+             '</li>';
+        }
+
+    }
+
+    public static function CrearUsuario($nombre, $apellido, $clave, $fecha_registro, $localidad, $mail)
+    {
+        //echo "CrearUsuario " . $nombre;
+        //return new Usuario($nombre, $apellido, $clave, $fecha_registro, $localidad, $mail);
+        $u =  new Usuario($nombre, $apellido, $clave, $fecha_registro, $localidad, $mail);
+        
+        echo "/////////////////// <br>";
+        echo "CrearUsuario <br>";
+        var_dump($u);
+        return $u;
+    }
+
+
 }
-
-Usuario::Operar();
-
 ?>

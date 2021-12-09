@@ -37,8 +37,8 @@ class ArchivoCSV
             if($file)
             {
                 fclose($file);
-                echo "desp del close";
-                echo $file;
+                // echo "desp del close";
+                // echo $file;
             }            
         }
     } 
